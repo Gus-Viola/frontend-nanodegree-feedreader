@@ -1,0 +1,26 @@
+{
+    "rules": {
+        "indent": [
+            2,
+            "tab"
+        ],
+        "quotes": [
+            2,
+            "single"
+        ],
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "semi": [
+            2,
+            "always"
+        ]
+    },
+    "env": {
+        "browser": true,
+        "jasmine": true,
+        "node": true
+    },
+    "extends": "eslint:recommended"
+}
