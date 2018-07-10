@@ -20,7 +20,6 @@ $(function() {
 
 
 		it('each feed has a valid URL', function(){
-			// eslint-disable-next-line no-undef
 			for (i in allFeeds) {
 				expect(allFeeds[i].url).toBeDefined();
 				expect(allFeeds[i].url.length).not.toBe(0);
@@ -61,7 +60,7 @@ $(function() {
 				loadFeed(0, done);
 			});
 
-			expect($('body').hasClass('entry')).toBeDefined();
+			expect($('.feed').children().hasClass('entry')).toBeDefined();
 		});//it loadFeed
 
 	});//end of test suite 'Initial Entries'
