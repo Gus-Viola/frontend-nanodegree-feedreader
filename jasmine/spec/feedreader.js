@@ -21,15 +21,18 @@ $(function() {
 
 		it('each feed has a valid URL', function(){
 			for (i in allFeeds) {
-				expect(allFeeds[i].url).toBeDefined();
-				expect(allFeeds[i].url.length).not.toBe(0);
+				// expect(allFeeds[i].url).toBeDefined();
+				// expect(allFeeds[i].url.length).not.toBe(0);
+				expect(allFeeds[i].url).toBeTruthy();
 			}//for loop
 		});//it valid URL
 
 		it('each feed has a valid name', function() {
 			for (i in allFeeds) {
-				expect(allFeeds[i].name).toBeDefined();
-				expect(allFeeds[i].name.length).not.toBe(0);
+				// expect(allFeeds[i].name).toBeDefined(); //These two also work.
+				// expect(allFeeds[i].name.length).not.toBe(0);
+				//A nice suggestion from the Udacity reviewer:
+				expect(allFeeds[i].url).toBeTruthy();
 			}//for loop
 		});//it valid name
 
@@ -54,13 +57,13 @@ $(function() {
 
 	describe('Initial Entries', function(){
 
+		beforeEach(function(done) {
+			loadFeed(0, done);
+		});//beforeEach
+
+
 		it('ensures there is at least one feed entry after loadFeed returns', function(){
-
-			beforeEach(function(done) {
-				loadFeed(0, done);
-			});
-
-			expect($('.feed').children().hasClass('entry')).toBeDefined();
+			expect($('.feed .entry').length).toBeGreaterThan(0);
 		});//it loadFeed
 
 	});//end of test suite 'Initial Entries'
